@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The page you are looking for could not be found.">
+  <title>404 | Page Not Found</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background:
+        linear-gradient(rgba(5, 23, 35, 0.72), rgba(5, 23, 35, 0.72)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+    }
+
+    .not-found-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .not-found-card {
+      width: min(880px, 100%);
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 56px 32px;
+      border: 4px solid rgba(255, 255, 255, 0.95);
+      border-radius: 6px;
+      background: rgba(7, 25, 37, 0.22);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+    }
+
+    .not-found-code {
+      color: #ff941f;
+      font-size: clamp(78px, 15vw, 150px);
+      line-height: 0.88;
+      font-weight: 900;
+      text-shadow: 0 7px 0 rgba(0, 0, 0, 0.34);
+    }
+
+    .not-found-title {
+      margin-top: 18px;
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+    }
+
+    .not-found-text {
+      max-width: 440px;
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .not-found-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .not-found-btn {
+      min-width: 154px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 2px solid #ff941f;
+      border-radius: 999px;
+      background: #ff941f;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .not-found-btn:hover {
+      transform: translateY(-2px);
+      background: #ffffff;
+      color: #ff941f;
+    }
+
+    .not-found-btn.secondary {
+      background: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .not-found-btn.secondary:hover {
+      background: #ffffff;
+      color: #0b2433;
+    }
+
+    @media (max-width: 600px) {
+      .not-found-page {
+        padding: 24px 14px;
+      }
+
+      .not-found-card {
+        min-height: 420px;
+        padding: 42px 20px;
+        border-width: 3px;
+      }
+
+      .not-found-actions {
+        width: 100%;
+      }
+
+      .not-found-btn {
+        width: min(240px, 100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found-page">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <div class="not-found-code">404</div>
+      <h1 class="not-found-title" id="not-found-title">Page Not Found</h1>
+      <p class="not-found-text">The page you are looking for was moved, removed, renamed or never existed.</p>
+      <div class="not-found-actions">
+        <button class="not-found-btn secondary" type="button" onclick="history.back()">Go Back</button>
+        <a class="not-found-btn" href="index.html">Back To Home</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,3 @@
+.contact-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: start; }
+.contact-form { padding: 28px; }
+.contact-info { display: grid; gap: 18px; }

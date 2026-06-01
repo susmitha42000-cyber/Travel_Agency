@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to Stackly for futuristic luxury travel planning.">
+  <title>Login | Stackly</title>
+  <link rel="stylesheet" href="vendor/aos/aos.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/auth.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-body">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" data-header><nav class="navbar container"><a class="logo header-logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a><button class="nav-toggle" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button><div class="nav-panel" data-nav-panel><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="tours.html">Tours</a><a href="gallery.html">Our Gallery</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div><div class="nav-auth"><a class="active" href="login.html">Login</a><a class="nav-cta" href="signup.html">Sign Up</a></div></div></nav></header>
+  <main class="auth-shell">
+    <section class="auth-card" data-aos="zoom-in">
+      <p class="eyebrow">Traveler access</p><h1>Welcome back</h1><p class="muted">Access saved itineraries, quotes, and concierge messages.</p>
+      <form data-auth-form="login" autocomplete="off" novalidate>
+        <div class="form-row"><label for="login-email">Email</label><input id="login-email" name="loginEmail" type="email" autocomplete="new-email" placeholder="you@example.com" required><small></small></div>
+        <div class="form-row"><label for="login-password">Password</label><input id="login-password" name="loginPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required minlength="6"><small></small></div>
+        <div class="form-line"><label><input type="checkbox" name="remember"> Remember me</label><a href="forgot-password.html">Forgot password?</a></div>
+        <button class="btn btn-primary full" type="submit">Login</button>
+      </form>
+      <div class="auth-divider"><span>or continue with</span></div>
+      <div class="social-login"><button>Google</button><button>Apple</button></div>
+      <p class="auth-switch">New here? <a href="signup.html">Create account</a></p>
+    </section>
+    <div class="floating-icons" aria-hidden="true"><span>✈</span><span>◇</span><span>◎</span></div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a><p>Premium futuristic travel design for guests who want every journey to feel rare, smooth, and deeply personal.</p></div>
+      <div><h3>Explore</h3><a href="about.html">About Us</a><a href="tours.html">Tours</a><a href="gallery.html">Our Gallery</a><a href="blog.html">Blog</a><a href="services.html">Services</a></div>
+      <div><h3>Destinations</h3><a href="404.html">Thailand</a><a href="404.html">Italy</a><a href="404.html">Switzerland</a><a href="404.html">France</a><a href="404.html">Indonesia</a></div>
+      <div><h3>Contact</h3><p>hello@stackly.example</p><p>+1 888 540 2040</p><div class="socials"><a class="social-icon google" href="404.html" aria-label="Google">G</a><a class="social-icon facebook" href="404.html" aria-label="Facebook">f</a><a class="social-icon twitter" href="404.html" aria-label="Twitter">X</a><a class="social-icon instagram" href="404.html" aria-label="Instagram">Ig</a><a class="social-icon youtube" href="404.html" aria-label="YouTube">Yt</a></div></div>
+    </div>
+    <div class="footer-bottom">� 2026 Stackly. All rights reserved.</div>
+  </footer>
+  <script src="vendor/aos/aos.js"></script><script src="vendor/particles/particles.js"></script><script src="js/navbar.js"></script><script src="js/auth.js"></script><script src="js/main.js"></script>
+</body>
+</html>
