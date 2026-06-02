@@ -134,6 +134,23 @@
   }
 }
 
+@media (max-width: 760px) {
+  .gallery-category-grid,
+  .gallery-story-grid,
+  .gallery-feature-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-category-card,
+  .gallery-category-card img {
+    min-height: 240px;
+  }
+
+  .gallery-feature-collage {
+    grid-template-rows: none;
+  }
+}
+
 @media (max-width: 640px) {
   .gallery-hero-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));

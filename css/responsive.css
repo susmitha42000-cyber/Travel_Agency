@@ -38,9 +38,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius);
     background:
-      linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.05)),
-      rgba(5,7,13,.74);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.035)),
+      rgba(5,7,13,.94);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.58);
     backdrop-filter: blur(22px) saturate(150%);
     -webkit-backdrop-filter: blur(22px) saturate(150%);
     transform: translateY(-14px);
@@ -50,7 +50,19 @@
   }
   .nav-panel.open { transform: translateY(0); opacity: 1; visibility: visible; }
   .nav-links, .nav-auth { display: grid; gap: 8px; justify-self: stretch; }
-  .nav-panel a { min-height: 44px; display: flex; align-items: center; white-space: normal; overflow-wrap: anywhere; }
+  .nav-panel a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    background: rgba(255, 255, 255, 0.035);
+  }
+  .nav-panel a:hover,
+  .nav-panel a.active {
+    background: rgba(255, 255, 255, 0.12);
+  }
   .nav-auth { border-top: 1px solid var(--line); padding-top: 10px; }
   .hero-grid, .split-layout, .signature-layout, .showcase-grid, .contact-layout { grid-template-columns: 1fr; }
   [data-aos="fade-left"],
@@ -79,6 +91,47 @@
   .globe-stage { min-height: 390px; }
   .card-grid.three, .feature-grid, .service-grid, .testimonial-grid, .footer-grid, .process-grid, .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .card-grid.three,
+  .feature-grid,
+  .service-grid,
+  .testimonial-grid,
+  .process-grid,
+  .comparison-grid,
+  .planning-highlights,
+  .footer-grid,
+  .gallery-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading .text-link {
+    display: inline-block;
+    margin-top: 14px;
+  }
+
+  .destination-card img,
+  .package-card img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .package-mini,
+  .newsletter-form,
+  .package-toolbar {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .package-toolbar select {
+    max-width: none;
+  }
 }
 
 @media (max-width: 640px) {

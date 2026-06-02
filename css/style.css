@@ -125,7 +125,14 @@ select:focus-visible,
 .nav-panel { display: contents; }
 .nav-links { justify-self: center; display: flex; align-items: center; gap: 4px; }
 .nav-auth { justify-self: end; display: flex; align-items: center; gap: 8px; }
-.nav-panel a { color: var(--muted); padding: 12px 11px; border-radius: var(--radius); transition: color .2s ease, background .2s ease, transform .2s ease; }
+.nav-panel a {
+  color: #eef6ff;
+  padding: 12px 11px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
 .nav-panel a:hover, .nav-panel a.active { color: var(--text); background: rgba(255,255,255,.08); transform: translateY(-2px); }
 .nav-panel .nav-cta {
   color: #dffcff;

@@ -103,11 +103,16 @@
 .floating-icons span { position: fixed; color: rgba(255,255,255,.45); font-size: 2rem; animation: iconDrift 7s ease-in-out infinite; }
 .floating-icons span:nth-child(1) { top: 18%; left: 12%; }.floating-icons span:nth-child(2) { right: 14%; top: 30%; animation-delay: 1s; }.floating-icons span:nth-child(3) { left: 20%; bottom: 12%; animation-delay: 2s; }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .auth-body { background-attachment: scroll; }
   .auth-card { width: 100%; }
+  .form-grid { grid-template-columns: 1fr; }
   .form-line { flex-wrap: wrap; }
   .social-login { gap: 8px; }
+}
+
+@media (max-width: 640px) {
+  .social-login { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 420px) {
