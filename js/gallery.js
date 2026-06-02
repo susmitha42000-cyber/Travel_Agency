@@ -1,22 +1,22 @@
 const galleryImages = [
-  ["https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80", "Turquoise coast"],
-  ["https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80", "Dubai night"],
-  ["https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=900&q=80", "Kyoto shrine"],
-  ["https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80", "Mountain road"],
-  ["https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80", "Bali retreat"],
-  ["https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80", "Northern sky"],
-  ["https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80", "Paris icons"],
-  ["https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80", "Open road"],
-  ["https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80", "Tokyo skyline"],
-  ["https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80", "Safari golden hour"],
-  ["https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80", "Desert palace"],
-  ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80", "Yosemite valley"],
-  ["https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80", "Italian coast"],
-  ["https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80", "Travel planning"],
-  ["https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80", "Resort pool"],
-  ["https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80", "Highland route"],
-  ["https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80", "Friends exploring"],
-  ["https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=900&q=80", "Airport departure"]
+  ["assets/images/destination_card.webp", "Turquoise coast"],
+  ["assets/images/Dubai_skyline.webp", "Dubai night"],
+  ["assets/images/japan.webp", "Kyoto shrine"],
+  ["assets/images/open%20mountain.webp", "Mountain road"],
+  ["assets/images/luxgery_resort.webp", "Bali retreat"],
+  ["assets/images/iceland.webp", "Northern sky"],
+  ["assets/images/italiancoast.webp", "Paris icons"],
+  ["assets/images/open%20mountain.webp", "Open road"],
+  ["assets/images/japan.webp", "Tokyo skyline"],
+  ["assets/images/safari.webp", "Safari golden hour"],
+  ["assets/images/Dubai_skyline.webp", "Desert palace"],
+  ["assets/images/iceland.webp", "Yosemite valley"],
+  ["assets/images/italiancoast.webp", "Italian coast"],
+  ["assets/images/travellers.webp", "Travel planning"],
+  ["assets/images/luxgery_resort.webp", "Resort pool"],
+  ["assets/images/open%20mountain.webp", "Highland route"],
+  ["assets/images/travellers.webp", "Friends exploring"],
+  ["assets/images/destination_card.webp", "Airport departure"]
 ];
 
 const galleryGrid = document.querySelector("#gallery-grid");
@@ -33,10 +33,10 @@ const createGallerySection = (html) => {
 if (galleryHeroCopy) {
   galleryHeroCopy.insertAdjacentHTML("beforeend", `
     <div class="gallery-hero-strip" aria-label="Featured gallery previews">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=420&q=80" alt="Turquoise tropical beach">
-      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=420&q=80" alt="Tokyo skyline at night">
-      <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=420&q=80" alt="Kyoto shrine walkway">
-      <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=420&q=80" alt="Safari landscape">
+      <img src="assets/images/destination_card.webp" alt="Turquoise tropical beach">
+      <img src="assets/images/japan.webp" alt="Tokyo skyline at night">
+      <img src="assets/images/japan.webp" alt="Kyoto shrine walkway">
+      <img src="assets/images/safari.webp" alt="Safari landscape">
     </div>
   `);
 }
@@ -51,13 +51,13 @@ if (galleryGrid) {
             <p class="eyebrow">Travel moods</p>
             <h2>Browse the moments our travelers ask for most</h2>
           </div>
-          <a href="contact.html" class="text-link">Plan a photo-ready trip</a>
+          <a href="404.html" class="text-link">Plan a photo-ready trip</a>
         </div>
         <div class="gallery-category-grid">
-          <article class="gallery-category-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=720&q=80" alt="Clear tropical beach water"><div><span>Beaches</span><h3>Blue water escapes</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=720&q=80" alt="Dubai city skyline"><div><span>Cities</span><h3>Skyline evenings</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=720&q=80" alt="Mountain road landscape"><div><span>Mountains</span><h3>Open-air routes</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=720&q=80" alt="Bali resort pool"><div><span>Resorts</span><h3>Private slow days</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up"><img src="assets/images/destination_card.webp" alt="Clear tropical beach water"><div><span>Beaches</span><h3>Blue water escapes</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="100"><img src="assets/images/Dubai_skyline.webp" alt="Dubai city skyline"><div><span>Cities</span><h3>Skyline evenings</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="200"><img src="assets/images/open%20mountain.webp" alt="Mountain road landscape"><div><span>Mountains</span><h3>Open-air routes</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="300"><img src="assets/images/luxgery_resort.webp" alt="Bali resort pool"><div><span>Resorts</span><h3>Private slow days</h3></div></article>
         </div>
       </div>
     </section>
@@ -69,12 +69,12 @@ if (galleryGrid) {
           <p class="eyebrow">Featured album</p>
           <h2>From arrival views to once-in-a-lifetime evenings</h2>
           <p class="muted">A wider look at the places, stays, transfers, and quiet details that make a Stackly journey feel effortless.</p>
-          <div class="hero-actions"><a href="#gallery-grid" class="btn btn-primary">View Photos</a><a href="tours.html" class="btn btn-ghost">Explore Tours</a></div>
+          <div class="hero-actions"><a href="404.html" class="btn btn-primary">View Photos</a><a href="404.html" class="btn btn-ghost">Explore Tours</a></div>
         </div>
         <div class="gallery-feature-collage" data-aos="fade-left">
-          <img class="feature-large" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=950&q=85" alt="Luxury resort pool with mountain view">
-          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=620&q=80" alt="Northern lights sky">
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=620&q=80" alt="Paris city landmark">
+          <img class="feature-large" src="assets/images/luxgery_resort.webp" alt="Luxury resort pool with mountain view">
+          <img src="assets/images/iceland.webp" alt="Northern lights sky">
+          <img src="assets/images/italiancoast.webp" alt="Paris city landmark">
         </div>
       </div>
     </section>

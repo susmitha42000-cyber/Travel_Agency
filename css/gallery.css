@@ -28,6 +28,7 @@
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
 .gallery-category-card img {
@@ -40,6 +41,12 @@
 
 .gallery-category-card:hover img {
   transform: scale(1.06);
+}
+
+.gallery-category-card:hover {
+  border-color: rgba(61,255,194,.7);
+  box-shadow: 0 28px 80px rgba(49,216,255,.22);
+  transform: translateY(-6px);
 }
 
 .gallery-category-card div {
@@ -96,9 +103,10 @@
 }
 
 .masonry-gallery { columns: 3 260px; column-gap: 18px; }
-.gallery-item { break-inside: avoid; margin: 0 0 18px; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); cursor: zoom-in; }
+.gallery-item { break-inside: avoid; margin: 0 0 18px; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); cursor: zoom-in; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
 .gallery-item img { width: 100%; min-height: 220px; object-fit: cover; transition: transform .3s ease; }
 .gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover { border-color: rgba(61,255,194,.7); box-shadow: 0 24px 70px rgba(49,216,255,.2); transform: translateY(-5px); }
 .gallery-item span { position: absolute; left: 14px; bottom: 14px; background: rgba(5,7,13,.72); padding: 8px 10px; border-radius: var(--radius); }
 .lightbox { position: fixed; inset: 0; z-index: 80; display: none; place-items: center; background: rgba(0,0,0,.86); padding: 24px; }
 .lightbox.open { display: grid; }
@@ -135,5 +143,13 @@
 
   .gallery-feature-collage .feature-large {
     grid-row: auto;
+  }
+
+  .masonry-gallery {
+    columns: 1;
+  }
+
+  .lightbox {
+    padding: 14px;
   }
 }

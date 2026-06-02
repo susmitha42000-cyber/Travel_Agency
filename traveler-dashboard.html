@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Traveler dashboard for Stackly luxury travel guests.">
+  <title>Traveler Dashboard | Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a class="logo dashboard-logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a>
+      <p>Menu</p>
+      <nav aria-label="Dashboard navigation">
+        <a class="active" href="#dashboard" data-dashboard-link="dashboard">Dashboard</a>
+        <a href="#bookings" data-dashboard-link="bookings">My Bookings</a>
+        <a href="#saved-trips" data-dashboard-link="saved-trips">Saved Trips</a>
+        <a href="#concierge" data-dashboard-link="concierge">Concierge</a>
+        <a href="#payments" data-dashboard-link="payments">Payments</a>
+        <a href="#support" data-dashboard-link="support">Support</a>
+      </nav>
+      <a class="dashboard-logout" href="login.html">Sign Out</a>
+    </aside>
+
+    <section class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div>
+          <p class="eyebrow">Traveler Dashboard</p>
+          <h1>Welcome back, <span data-user-name>Traveler</span></h1>
+        </div>
+        <div class="dashboard-actions">
+          <label class="dashboard-search"><span>Search</span><input type="search" placeholder="Search trips"></label>
+          <a class="topbar-icon" href="404.html" aria-label="Settings">⚙</a>
+          <a class="topbar-icon" href="404.html" aria-label="Messages">✉</a>
+          <a class="topbar-icon" href="404.html" aria-label="Notifications">●</a>
+          <div class="dashboard-user"><strong data-user-name>Traveler</strong><span data-user-email></span></div>
+        </div>
+      </header>
+
+      <section class="dashboard-view active" data-dashboard-view="dashboard">
+        <div class="dashboard-stats">
+          <article><span>Total Trips</span><strong>18</strong><small>+3 this year</small></article>
+          <article><span>Active Bookings</span><strong>04</strong><small>2 awaiting confirmation</small></article>
+          <article><span>Saved Budget</span><strong>$8,420</strong><small>Across curated offers</small></article>
+          <article><span>Completed Tours</span><strong>14</strong><small>4.9 average rating</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-panel chart-panel">
+            <div class="panel-title"><h2>Trip Spend vs. Savings</h2><span>Dec 2026</span></div>
+            <div class="line-chart" aria-hidden="true">
+              <svg viewBox="0 0 620 250">
+                <path class="chart-grid" d="M20 45H600M20 95H600M20 145H600M20 195H600"/>
+                <path class="chart-line cyan" d="M25 168 C80 105 120 195 170 126 S260 92 315 145 410 205 465 118 555 92 600 150"/>
+                <path class="chart-line rose" d="M25 120 C90 165 130 98 185 140 S285 185 340 96 425 115 478 170 555 195 600 126"/>
+              </svg>
+            </div>
+          </article>
+          <article class="dashboard-panel">
+            <div class="panel-title"><h2>Package Split</h2><span>Current</span></div>
+            <div class="donut-chart" aria-hidden="true"></div>
+            <div class="legend"><span>Hotels</span><span>Flights</span><span>Experiences</span><span>Concierge</span></div>
+          </article>
+          <article class="dashboard-panel">
+            <div class="panel-title"><h2>Upcoming Packages</h2><span>Next trips</span></div>
+            <table class="dashboard-table">
+              <tr><th>Date</th><th>Package</th><th>Status</th></tr>
+              <tr><td>12/08</td><td>Dubai Skyline Stay</td><td>Confirming</td></tr>
+              <tr><td>12/14</td><td>Maldives Island Calm</td><td>Booked</td></tr>
+              <tr><td>01/05</td><td>Kyoto Culture Route</td><td>Draft</td></tr>
+            </table>
+          </article>
+          <article class="dashboard-panel destination-map">
+            <div class="panel-title"><h2>Popular Destinations</h2><span>Saved</span></div>
+            <div class="map-visual"><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+          <article class="dashboard-panel calendar-panel">
+            <div class="panel-title"><h2>Travel Calendar</h2><span>January 2027</span></div>
+            <div class="mini-calendar">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+              <b>1</b><b>2</b><b class="active">3</b><b>4</b><b>5</b><b>6</b><b>7</b>
+              <b>8</b><b>9</b><b>10</b><b class="active">11</b><b>12</b><b>13</b><b>14</b>
+              <b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b><b>21</b>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view="bookings">
+        <div class="view-heading"><h2>My Bookings</h2><p>Confirmed and pending travel reservations for your upcoming journeys.</p></div>
+        <div class="dashboard-panel"><table class="dashboard-table">
+          <tr><th>Booking ID</th><th>Trip</th><th>Date</th><th>Status</th><th>Amount</th></tr>
+          <tr><td>STK-2048</td><td>Dubai Skyline Stay</td><td>08 Dec 2026</td><td>Confirming</td><td>$2,450</td></tr>
+          <tr><td>STK-2055</td><td>Maldives Island Calm</td><td>14 Dec 2026</td><td>Booked</td><td>$5,900</td></tr>
+          <tr><td>STK-2110</td><td>Kyoto Culture Route</td><td>05 Jan 2027</td><td>Proposal</td><td>$3,280</td></tr>
+        </table></div>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view="saved-trips">
+        <div class="view-heading"><h2>Saved Trips</h2><p>Destinations and packages saved for comparison before booking.</p></div>
+        <div class="dashboard-list">
+          <article class="dashboard-panel"><span class="step">01</span><h3>Japan Culture Route</h3><p>Tokyo dining, Kyoto temples, bullet trains, and private local hosts.</p></article>
+          <article class="dashboard-panel"><span class="step">02</span><h3>Iceland Aurora Drive</h3><p>Glacier routes, thermal lagoons, waterfall stops, and northern light tracking.</p></article>
+          <article class="dashboard-panel"><span class="step">03</span><h3>Italy Coast Escape</h3><p>Cliffside stays, private transfers, seaside dining, and slow village days.</p></article>
+        </div>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view="concierge">
+        <div class="view-heading"><h2>Concierge</h2><p>Personal travel requests, preferences, and live support notes.</p></div>
+        <div class="dashboard-list">
+          <article class="dashboard-panel"><h3>Arrival Support</h3><p>Airport meet-and-assist requested for Dubai arrival at Terminal 3.</p></article>
+          <article class="dashboard-panel"><h3>Dining Preference</h3><p>Sea-view dinner, vegetarian tasting menu, and anniversary dessert noted.</p></article>
+          <article class="dashboard-panel"><h3>Room Style</h3><p>High-floor suite, quiet corridor, late checkout when available.</p></article>
+        </div>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view="payments">
+        <div class="view-heading"><h2>Payments</h2><p>Deposit, balance, refund, and invoice details for your bookings.</p></div>
+        <div class="dashboard-panel"><table class="dashboard-table">
+          <tr><th>Invoice</th><th>Package</th><th>Due</th><th>Status</th><th>Total</th></tr>
+          <tr><td>INV-9021</td><td>Dubai Skyline Stay</td><td>Paid</td><td>Complete</td><td>$2,450</td></tr>
+          <tr><td>INV-9044</td><td>Maldives Island Calm</td><td>04 Dec 2026</td><td>Deposit Paid</td><td>$5,900</td></tr>
+          <tr><td>INV-9080</td><td>Kyoto Culture Route</td><td>Pending</td><td>Draft</td><td>$3,280</td></tr>
+        </table></div>
+      </section>
+
+      <section class="dashboard-view" data-dashboard-view="support">
+        <div class="view-heading"><h2>Support</h2><p>Help tickets and travel assistance conversations.</p></div>
+        <div class="dashboard-list">
+          <article class="dashboard-panel"><h3>Open Ticket</h3><p>Flight time changed. Concierge team is checking transfer timing.</p><small>Priority: High</small></article>
+          <article class="dashboard-panel"><h3>Resolved</h3><p>Passport name confirmation updated for Maldives hotel booking.</p><small>Closed yesterday</small></article>
+          <article class="dashboard-panel"><h3>Help Center</h3><p>View cancellation rules, visa notes, and booking change policies.</p><small>Available 24/7</small></article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="vendor/particles/particles.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

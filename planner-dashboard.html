@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel planner dashboard for Stackly agency team members.">
+  <title>Travel Planner Dashboard | Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <main class="dashboard-shell">
+    <aside class="dashboard-sidebar">
+      <a class="logo dashboard-logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a>
+      <p>Menu</p>
+      <nav aria-label="Dashboard navigation">
+        <a class="active" href="planner-dashboard.html">Dashboard</a>
+        <a href="404.html">Bookings</a>
+        <a href="404.html">Travelers</a>
+        <a href="404.html">Tour Guides</a>
+        <a href="404.html">Packages</a>
+        <a href="404.html">Reports</a>
+        <a href="404.html">Support</a>
+      </nav>
+      <a class="dashboard-logout" href="login.html">Sign Out</a>
+    </aside>
+
+    <section class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div>
+          <p class="eyebrow">Planner Dashboard</p>
+          <h1>Welcome back, <span data-user-name>Planner</span></h1>
+        </div>
+        <div class="dashboard-actions">
+          <label class="dashboard-search"><span>Search</span><input type="search" placeholder="Search bookings"></label>
+          <a class="topbar-icon" href="404.html" aria-label="Settings">⚙</a>
+          <a class="topbar-icon" href="404.html" aria-label="Messages">✉</a>
+          <a class="topbar-icon" href="404.html" aria-label="Notifications">●</a>
+          <div class="dashboard-user"><strong data-user-name>Planner</strong><span data-user-email></span></div>
+        </div>
+      </header>
+
+      <div class="dashboard-stats">
+        <article><span>Total Tourists</span><strong>5,422</strong><small>+10% today</small></article>
+        <article><span>Active Bookings</span><strong>256</strong><small>+15% this week</small></article>
+        <article><span>Revenue Generated</span><strong>$5,056</strong><small>-0.5% today</small></article>
+        <article><span>Completed Tours</span><strong>2,501</strong><small>94% success rate</small></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="dashboard-panel chart-panel">
+          <div class="panel-title"><h2>Revenue vs. Expenses</h2><span>1 Dec 2026 - 30 Dec 2026</span></div>
+          <div class="line-chart" aria-hidden="true">
+            <svg viewBox="0 0 620 250">
+              <path class="chart-grid" d="M20 45H600M20 95H600M20 145H600M20 195H600"/>
+              <path class="chart-line cyan" d="M25 158 C78 95 120 188 172 116 S255 75 312 142 412 205 466 108 552 82 600 142"/>
+              <path class="chart-line rose" d="M25 102 C88 165 132 108 186 134 S282 184 340 78 426 102 480 158 552 188 600 116"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="dashboard-panel">
+          <div class="panel-title"><h2>Revenue Streams</h2><span>10 Jan 2027</span></div>
+          <div class="donut-chart" aria-hidden="true"></div>
+          <div class="legend"><span>Tour Packages</span><span>Insurance</span><span>Merchandise</span><span>Assistance</span></div>
+        </article>
+
+        <article class="dashboard-panel">
+          <div class="panel-title"><h2>Packages</h2><a href="404.html">See more</a></div>
+          <table class="dashboard-table">
+            <tr><th>Date</th><th>Package</th><th>Action</th></tr>
+            <tr><td>10/12</td><td>Bali, Indonesia</td><td><a href="404.html">Detail</a></td></tr>
+            <tr><td>10/12</td><td>Siem Reap, Cambodia</td><td><a href="404.html">Detail</a></td></tr>
+            <tr><td>10/12</td><td>Bangkok, Thailand</td><td><a href="404.html">Detail</a></td></tr>
+            <tr><td>10/12</td><td>Maldives</td><td><a href="404.html">Detail</a></td></tr>
+          </table>
+        </article>
+
+        <article class="dashboard-panel destination-map">
+          <div class="panel-title"><h2>Popular Destinations</h2><span>All</span></div>
+          <div class="map-visual"><span></span><span></span><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="dashboard-panel calendar-panel">
+          <div class="panel-title"><h2>Schedule</h2><span>November 2026</span></div>
+          <div class="mini-calendar">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            <b>30</b><b>01</b><b>02</b><b>03</b><b>04</b><b>05</b><b>06</b>
+            <b class="active">07</b><b>08</b><b>09</b><b>10</b><b>11</b><b>12</b><b>13</b>
+            <b>14</b><b>15</b><b>16</b><b>17</b><b>18</b><b>19</b><b>20</b>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="vendor/particles/particles.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

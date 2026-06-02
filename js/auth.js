@@ -27,6 +27,28 @@ function validEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function validPassword(value) {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(value);
+}
+
+function preventNumbersInEmail() {
+  document.querySelectorAll("input[type='email']").forEach((input) => {
+    input.addEventListener("input", () => {
+      const cleanValue = input.value.replace(/\d/g, "");
+      if (input.value !== cleanValue) input.value = cleanValue;
+    });
+  });
+}
+
+function preventNumbersInNames() {
+  document.querySelectorAll("[name='firstName'], [name='lastName']").forEach((input) => {
+    input.addEventListener("input", () => {
+      const cleanValue = input.value.replace(/\d/g, "");
+      if (input.value !== cleanValue) input.value = cleanValue;
+    });
+  });
+}
+
 function setupCountrySelector() {
   const search = document.querySelector("[data-country-search]");
   const options = document.querySelector("[data-country-options]");
@@ -57,13 +79,13 @@ function setupCountrySelector() {
 function clearRestoredValues() {
   document.querySelectorAll("[data-auth-form]").forEach((form) => {
     form.reset();
-    form.querySelectorAll("input").forEach((input) => {
-      if (input.type === "checkbox") {
-        input.checked = false;
+    form.querySelectorAll("input, select").forEach((field) => {
+      if (field.type === "checkbox") {
+        field.checked = false;
       } else {
-        input.value = "";
+        field.value = "";
       }
-      input.closest(".form-row")?.classList.remove("error", "success");
+      field.closest(".form-row")?.classList.remove("error", "success");
     });
   });
 }
@@ -79,24 +101,24 @@ function preventDelayedAutofill() {
 
 function validateForm(form) {
   let ok = true;
-  const fields = [...form.querySelectorAll("input[required]")];
+  const fields = [...form.querySelectorAll("input[required], select[required]")];
 
-  fields.forEach((input) => {
-    if (input.type === "checkbox") {
-      if (!input.checked) ok = false;
+  fields.forEach((field) => {
+    if (field.type === "checkbox") {
+      if (!field.checked) ok = false;
       return;
     }
-    if (!input.value.trim()) {
-      setError(input, "Required");
+    if (!field.value.trim()) {
+      setError(field, "Required");
       ok = false;
-    } else if (input.type === "email" && !validEmail(input.value)) {
-      setError(input, "Enter a valid email");
+    } else if (field.type === "email" && !validEmail(field.value)) {
+      setError(field, "Enter a valid email");
       ok = false;
-    } else if (input.name === "password" && input.value.length < 6) {
-      setError(input, "Use a stronger password");
+    } else if (field.type === "password" && !validPassword(field.value)) {
+      setError(field, "Min 8 chars, 1 Upper, 1 Lower, 1 Number & 1 Symbol");
       ok = false;
     } else {
-      setSuccess(input);
+      setSuccess(field);
     }
   });
 
@@ -116,9 +138,26 @@ document.querySelectorAll("[data-auth-form]").forEach((form) => {
     if (!validateForm(form)) return;
     const button = form.querySelector("button[type='submit']");
     button.textContent = form.dataset.authForm === "forgot" ? "Reset Link Sent" : "Success";
+    if (form.dataset.authForm === "login") {
+      const role = form.querySelector("[name='loginRole']")?.value;
+      const email = form.querySelector("[name='loginEmail']")?.value.trim() || "";
+      const emailName = email.split("@")[0] || "Traveler";
+      const displayName = emailName
+        .replace(/[._-]+/g, " ")
+        .replace(/\b\w/g, (letter) => letter.toUpperCase());
+      const dashboards = {
+        traveler: "traveler-dashboard.html",
+        planner: "planner-dashboard.html"
+      };
+      localStorage.setItem("stacklyUser", JSON.stringify({ displayName, email, role }));
+      window.location.href = dashboards[role] || "traveler-dashboard.html";
+      return;
+    }
     form.reset();
   });
 });
 
 preventDelayedAutofill();
+preventNumbersInEmail();
+preventNumbersInNames();
 setupCountrySelector();

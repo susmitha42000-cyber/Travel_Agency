@@ -8,31 +8,28 @@
 </head>
 <body class="auth-body">
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
-  <header class="site-header" data-header><nav class="navbar container"><a class="logo header-logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a><button class="nav-toggle" data-nav-toggle aria-label="Open menu"><span></span><span></span><span></span></button><div class="nav-panel" data-nav-panel><div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="tours.html">Tours</a><a href="gallery.html">Our Gallery</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div><div class="nav-auth"><a class="active" href="login.html">Login</a><a class="nav-cta" href="signup.html">Sign Up</a></div></div></nav></header>
   <main class="auth-shell">
     <section class="auth-card" data-aos="zoom-in">
-      <p class="eyebrow">Traveler access</p><h1>Welcome back</h1><p class="muted">Access saved itineraries, quotes, and concierge messages.</p>
+      <p class="eyebrow">STACKLY</p><h1>Welcome back</h1><p class="muted">Access saved itineraries, quotes, and concierge messages.</p>
       <form data-auth-form="login" autocomplete="off" novalidate>
         <div class="form-row"><label for="login-email">Email</label><input id="login-email" name="loginEmail" type="email" autocomplete="new-email" placeholder="you@example.com" required><small></small></div>
-        <div class="form-row"><label for="login-password">Password</label><input id="login-password" name="loginPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required minlength="6"><small></small></div>
-        <div class="form-line"><label><input type="checkbox" name="remember"> Remember me</label><a href="forgot-password.html">Forgot password?</a></div>
+        <div class="form-row"><label for="login-password">Password</label><input id="login-password" name="loginPassword" type="password" autocomplete="new-password" placeholder="Enter your password" required minlength="8"><small></small></div>
+        <div class="form-row"><label for="login-role">Select Role</label><select id="login-role" name="loginRole" required><option value="">Choose your role</option><option value="traveler">Traveler</option><option value="planner">Travel Planner</option></select><small></small></div>
+        <div class="form-line remember-line"><label><input type="checkbox" name="remember"> Remember me</label><a href="404.html">Forgot password?</a></div>
         <button class="btn btn-primary full" type="submit">Login</button>
       </form>
       <div class="auth-divider"><span>or continue with</span></div>
-      <div class="social-login"><button>Google</button><button>Apple</button></div>
+      <div class="social-login">
+        <a class="social-auth google" href="404.html" aria-label="Continue with Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4c-.2 1.2-.9 2.2-2 2.9v2.4h3.2c1.8-1.7 2.9-4.2 2.9-7.1z"/><path d="M12 22c2.7 0 4.9-.9 6.5-2.4l-3.2-2.4c-.9.6-2 .9-3.3.9-2.6 0-4.8-1.7-5.6-4.1H3.2v2.5C4.8 19.8 8.2 22 12 22z"/><path d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.5H3.2C2.4 8.9 2 10.4 2 12s.4 3.1 1.2 4.5z"/><path d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8C16.9 3 14.7 2 12 2 8.2 2 4.8 4.2 3.2 7.5L6.4 10c.8-2.4 3-4.1 5.6-4.1z"/></svg></a>
+        <a class="social-auth youtube" href="404.html" aria-label="Continue with YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.3-1C15.2 3.7 12 3.7 12 3.7s-3.2 0-6.4.2c-.5.1-1.5.1-2.3 1-.7.7-.9 2.3-.9 2.3S2.2 9.1 2.2 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 6.2.2 6.2.2s3.2 0 6.4-.2c.5-.1 1.5-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.9 14.6V8.1l5.8 3.3z"/></svg></a>
+        <a class="social-auth twitter" href="404.html" aria-label="Continue with Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.4 10.4 22 2h-1.8l-6.6 7.3L8.3 2H2.2l8 11.2L2.2 22h1.8l7-7.8 5.6 7.8h6.1zm-2.5 2.8-.8-1.1L4.7 3.3h2.5l5.2 7.2.8 1.1 6.7 9.2h-2.5z"/></svg></a>
+        <a class="social-auth facebook" href="404.html" aria-label="Continue with Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.3V6.6c0-.8.5-1 1.1-1h2.6V2.2C17.2 2.1 15.6 2 14.2 2c-3 0-5 1.8-5 5.1v1.2H6v3.8h3.2V22H14v-9.9h3.3l.5-3.8z"/></svg></a>
+        <a class="social-auth instagram" href="404.html" aria-label="Continue with Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.4 5.6 20 7.6 20h8.8c2 0 3.6-1.6 3.6-3.6V7.6C20 5.6 18.4 4 16.4 4zm9.7 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+      </div>
       <p class="auth-switch">New here? <a href="signup.html">Create account</a></p>
     </section>
     <div class="floating-icons" aria-hidden="true"><span>✈</span><span>◇</span><span>◎</span></div>
   </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a class="logo" href="index.html"><img src="assets/images/Logo.webp" alt="Stackly logo"></a><p>Premium futuristic travel design for guests who want every journey to feel rare, smooth, and deeply personal.</p></div>
-      <div><h3>Explore</h3><a href="about.html">About Us</a><a href="tours.html">Tours</a><a href="gallery.html">Our Gallery</a><a href="blog.html">Blog</a><a href="services.html">Services</a></div>
-      <div><h3>Destinations</h3><a href="404.html">Thailand</a><a href="404.html">Italy</a><a href="404.html">Switzerland</a><a href="404.html">France</a><a href="404.html">Indonesia</a></div>
-      <div><h3>Contact</h3><p>hello@stackly.example</p><p>+1 888 540 2040</p><div class="socials"><a class="social-icon google" href="404.html" aria-label="Google">G</a><a class="social-icon facebook" href="404.html" aria-label="Facebook">f</a><a class="social-icon twitter" href="404.html" aria-label="Twitter">X</a><a class="social-icon instagram" href="404.html" aria-label="Instagram">Ig</a><a class="social-icon youtube" href="404.html" aria-label="YouTube">Yt</a></div></div>
-    </div>
-    <div class="footer-bottom">� 2026 Stackly. All rights reserved.</div>
-  </footer>
-  <script src="vendor/aos/aos.js"></script><script src="vendor/particles/particles.js"></script><script src="js/navbar.js"></script><script src="js/auth.js"></script><script src="js/main.js"></script>
+  <script src="vendor/aos/aos.js"></script><script src="vendor/particles/particles.js"></script><script src="js/auth.js"></script><script src="js/main.js"></script>
 </body>
 </html>

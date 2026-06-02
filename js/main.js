@@ -24,6 +24,11 @@ window.addEventListener("load", () => {
   }, remaining);
 });
 
+document.querySelectorAll(".glass-card, .destination-card, .package-card, .package-mini, .gallery-category-card, .gallery-item, .testimonial-spotlight, .style-list > div, .planning-highlights article").forEach((card, index) => {
+  if (!card.hasAttribute("data-aos")) card.setAttribute("data-aos", "fade-up");
+  if (!card.hasAttribute("data-aos-delay")) card.setAttribute("data-aos-delay", String(Math.min(index % 4, 3) * 80));
+});
+
 if (window.AOS) {
   AOS.init({
     duration: 800,

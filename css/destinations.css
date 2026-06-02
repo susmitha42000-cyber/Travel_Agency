@@ -1,1 +1,1 @@
-.destination-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); margin-top: 14px; }
+.destination-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); margin-top: 14px; flex-wrap: wrap; }
