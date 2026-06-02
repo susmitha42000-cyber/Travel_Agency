@@ -1,3 +1,18 @@
 .package-card ul { color: var(--muted); line-height: 1.8; padding-left: 18px; }
+.package-card img {
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
 .package-toolbar label { color: var(--muted); font-weight: 800; }
 .package-toolbar select { max-width: 220px; }
+.package-feedback {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(61, 255, 194, 0.44);
+  border-radius: var(--radius);
+  color: #dffcff;
+  background: rgba(61, 255, 194, 0.1);
+  font-weight: 750;
+}

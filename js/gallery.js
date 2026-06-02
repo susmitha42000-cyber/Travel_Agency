@@ -1,22 +1,22 @@
 const galleryImages = [
-  ["assets/images/destination_card.webp", "Turquoise coast"],
-  ["assets/images/Dubai_skyline.webp", "Dubai night"],
-  ["assets/images/japan.webp", "Kyoto shrine"],
-  ["assets/images/open%20mountain.webp", "Mountain road"],
-  ["assets/images/luxgery_resort.webp", "Bali retreat"],
-  ["assets/images/iceland.webp", "Northern sky"],
-  ["assets/images/italiancoast.webp", "Paris icons"],
-  ["assets/images/open%20mountain.webp", "Open road"],
-  ["assets/images/japan.webp", "Tokyo skyline"],
-  ["assets/images/safari.webp", "Safari golden hour"],
-  ["assets/images/Dubai_skyline.webp", "Desert palace"],
-  ["assets/images/iceland.webp", "Yosemite valley"],
-  ["assets/images/italiancoast.webp", "Italian coast"],
-  ["assets/images/travellers.webp", "Travel planning"],
-  ["assets/images/luxgery_resort.webp", "Resort pool"],
-  ["assets/images/open%20mountain.webp", "Highland route"],
-  ["assets/images/travellers.webp", "Friends exploring"],
-  ["assets/images/destination_card.webp", "Airport departure"]
+  ["assets/images/destination_card.webp", "Clear turquoise tropical beach water"],
+  ["assets/images/Dubai_skyline.webp", "Dubai skyline glowing at sunset"],
+  ["assets/images/japan.webp", "Japanese city and cultural travel scene"],
+  ["assets/images/open%20mountain.webp", "Open mountain road through a rugged landscape"],
+  ["assets/images/luxgery_resort.webp", "Luxury resort pool surrounded by tropical scenery"],
+  ["assets/images/iceland.webp", "Iceland landscape beneath a dramatic northern sky"],
+  ["assets/images/italiancoast.webp", "Italian coastal village above the sea"],
+  ["assets/images/open%20mountain.webp", "Wide mountain road for a scenic driving route"],
+  ["assets/images/japan.webp", "Tokyo skyline and urban travel scene"],
+  ["assets/images/safari.webp", "Safari landscape in golden hour light"],
+  ["assets/images/Dubai_skyline.webp", "Dubai city skyline for a luxury desert gateway"],
+  ["assets/images/iceland.webp", "Iceland valley and mountain travel landscape"],
+  ["assets/images/italiancoast.webp", "Italian coast village and blue sea"],
+  ["assets/images/travellers.webp", "Travelers planning a trip together"],
+  ["assets/images/luxgery_resort.webp", "Resort pool with mountain views"],
+  ["assets/images/open%20mountain.webp", "Highland route through open mountains"],
+  ["assets/images/travellers.webp", "Friends exploring a scenic destination"],
+  ["assets/images/destination_card.webp", "Tropical beach destination for a luxury escape"]
 ];
 
 const galleryGrid = document.querySelector("#gallery-grid");
@@ -33,10 +33,10 @@ const createGallerySection = (html) => {
 if (galleryHeroCopy) {
   galleryHeroCopy.insertAdjacentHTML("beforeend", `
     <div class="gallery-hero-strip" aria-label="Featured gallery previews">
-      <img src="assets/images/destination_card.webp" alt="Turquoise tropical beach">
-      <img src="assets/images/japan.webp" alt="Tokyo skyline at night">
-      <img src="assets/images/japan.webp" alt="Kyoto shrine walkway">
-      <img src="assets/images/safari.webp" alt="Safari landscape">
+      <img src="assets/images/destination_card.webp" alt="Turquoise tropical beach" loading="lazy" decoding="async">
+      <img src="assets/images/japan.webp" alt="Tokyo skyline at night" loading="lazy" decoding="async">
+      <img src="assets/images/japan.webp" alt="Kyoto shrine walkway" loading="lazy" decoding="async">
+      <img src="assets/images/safari.webp" alt="Safari landscape" loading="lazy" decoding="async">
     </div>
   `);
 }
@@ -54,10 +54,10 @@ if (galleryGrid) {
           <a href="404.html" class="text-link">Plan a photo-ready trip</a>
         </div>
         <div class="gallery-category-grid">
-          <article class="gallery-category-card" data-aos="fade-up"><img src="assets/images/destination_card.webp" alt="Clear tropical beach water"><div><span>Beaches</span><h3>Blue water escapes</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="100"><img src="assets/images/Dubai_skyline.webp" alt="Dubai city skyline"><div><span>Cities</span><h3>Skyline evenings</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="200"><img src="assets/images/open%20mountain.webp" alt="Mountain road landscape"><div><span>Mountains</span><h3>Open-air routes</h3></div></article>
-          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="300"><img src="assets/images/luxgery_resort.webp" alt="Bali resort pool"><div><span>Resorts</span><h3>Private slow days</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up"><img src="assets/images/destination_card.webp" alt="Clear tropical beach water" loading="lazy" decoding="async"><div><span>Beaches</span><h3>Blue Water Escapes</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="100"><img src="assets/images/Dubai_skyline.webp" alt="Dubai city skyline" loading="lazy" decoding="async"><div><span>Cities</span><h3>Skyline Evenings</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="200"><img src="assets/images/open%20mountain.webp" alt="Mountain road landscape" loading="lazy" decoding="async"><div><span>Mountains</span><h3>Open-Air Routes</h3></div></article>
+          <article class="gallery-category-card" data-aos="fade-up" data-aos-delay="300"><img src="assets/images/luxgery_resort.webp" alt="Bali resort pool" loading="lazy" decoding="async"><div><span>Resorts</span><h3>Private Slow Days</h3></div></article>
         </div>
       </div>
     </section>
@@ -72,9 +72,9 @@ if (galleryGrid) {
           <div class="hero-actions"><a href="404.html" class="btn btn-primary">View Photos</a><a href="404.html" class="btn btn-ghost">Explore Tours</a></div>
         </div>
         <div class="gallery-feature-collage" data-aos="fade-left">
-          <img class="feature-large" src="assets/images/luxgery_resort.webp" alt="Luxury resort pool with mountain view">
-          <img src="assets/images/iceland.webp" alt="Northern lights sky">
-          <img src="assets/images/italiancoast.webp" alt="Paris city landmark">
+          <img class="feature-large" src="assets/images/luxgery_resort.webp" alt="Luxury resort pool with mountain view" loading="lazy" decoding="async">
+          <img src="assets/images/iceland.webp" alt="Northern lights sky" loading="lazy" decoding="async">
+          <img src="assets/images/italiancoast.webp" alt="Paris city landmark" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -111,7 +111,7 @@ if (galleryGrid) {
 
   galleryGrid.innerHTML = galleryImages.map(([src, label], index) => `
     <figure class="gallery-item" data-aos="fade-up" data-aos-delay="${index * 50}">
-      <img src="${src}" alt="${label}">
+      <img src="${src}" alt="${label}" loading="lazy" decoding="async">
       <span>${label}</span>
     </figure>
   `).join("");

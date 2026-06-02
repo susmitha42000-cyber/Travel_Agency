@@ -61,10 +61,11 @@
     .not-found-text {
       max-width: 440px;
       margin-top: 18px;
-      color: rgba(255, 255, 255, 0.9);
+      color: #ffffff;
       font-size: 15px;
       line-height: 1.7;
       font-weight: 700;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
     }
 
     .not-found-actions {
@@ -99,6 +100,12 @@
       transform: translateY(-2px);
       background: #ffffff;
       color: #ff941f;
+    }
+
+    .not-found-btn:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 4px;
+      box-shadow: 0 0 0 7px rgba(255, 148, 31, 0.55);
     }
 
     .not-found-btn.secondary {
@@ -140,11 +147,21 @@
       <h1 class="not-found-title" id="not-found-title">Page Not Found</h1>
       <p class="not-found-text">The page you are looking for was moved, removed, renamed or never existed.</p>
       <div class="not-found-actions">
-        <button class="not-found-btn secondary" type="button" onclick="history.back()">Go Back</button>
+        <button class="not-found-btn secondary" type="button" onclick="goBack()">Go Back</button>
         <a class="not-found-btn" href="index.html">Back To Home</a>
       </div>
     </section>
   </main>
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
 

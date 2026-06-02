@@ -24,11 +24,19 @@ function setSuccess(input) {
 }
 
 function validEmail(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const email = value.trim();
+  return /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email) &&
+    !email.includes("..") &&
+    !email.startsWith(".") &&
+    !email.split("@")[0].endsWith(".");
 }
 
 function validPassword(value) {
   return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(value);
+}
+
+function validPhone(value) {
+  return /^\d{7,15}$/.test(value.trim());
 }
 
 function preventNumbersInEmail() {
@@ -44,6 +52,15 @@ function preventNumbersInNames() {
   document.querySelectorAll("[name='firstName'], [name='lastName']").forEach((input) => {
     input.addEventListener("input", () => {
       const cleanValue = input.value.replace(/\d/g, "");
+      if (input.value !== cleanValue) input.value = cleanValue;
+    });
+  });
+}
+
+function preventNonNumericPhone() {
+  document.querySelectorAll("[name='phone']").forEach((input) => {
+    input.addEventListener("input", () => {
+      const cleanValue = input.value.replace(/\D/g, "");
       if (input.value !== cleanValue) input.value = cleanValue;
     });
   });
@@ -114,6 +131,9 @@ function validateForm(form) {
     } else if (field.type === "email" && !validEmail(field.value)) {
       setError(field, "Enter a valid email");
       ok = false;
+    } else if (field.name === "phone" && !validPhone(field.value)) {
+      setError(field, "Enter 7 to 15 digits only");
+      ok = false;
     } else if (field.type === "password" && !validPassword(field.value)) {
       setError(field, "Min 8 chars, 1 Upper, 1 Lower, 1 Number & 1 Symbol");
       ok = false;
@@ -135,29 +155,45 @@ function validateForm(form) {
 document.querySelectorAll("[data-auth-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (form.dataset.submitting === "true") return;
+
     if (!validateForm(form)) return;
     const button = form.querySelector("button[type='submit']");
-    button.textContent = form.dataset.authForm === "forgot" ? "Reset Link Sent" : "Success";
-    if (form.dataset.authForm === "login") {
-      const role = form.querySelector("[name='loginRole']")?.value;
-      const email = form.querySelector("[name='loginEmail']")?.value.trim() || "";
-      const emailName = email.split("@")[0] || "Traveler";
-      const displayName = emailName
-        .replace(/[._-]+/g, " ")
-        .replace(/\b\w/g, (letter) => letter.toUpperCase());
-      const dashboards = {
-        traveler: "traveler-dashboard.html",
-        planner: "planner-dashboard.html"
-      };
-      localStorage.setItem("stacklyUser", JSON.stringify({ displayName, email, role }));
-      window.location.href = dashboards[role] || "traveler-dashboard.html";
-      return;
+    form.dataset.submitting = "true";
+    if (button) {
+      button.disabled = true;
+      button.classList.add("is-loading");
+      button.textContent = form.dataset.authForm === "forgot" ? "Sending Link..." : "Processing...";
     }
-    form.reset();
+
+    window.setTimeout(() => {
+      if (button) {
+        button.classList.remove("is-loading");
+        button.textContent = form.dataset.authForm === "forgot" ? "Reset Link Sent" : "Success";
+      }
+
+      if (form.dataset.authForm === "login") {
+        const role = form.querySelector("[name='loginRole']")?.value;
+        const email = form.querySelector("[name='loginEmail']")?.value.trim() || "";
+        const emailName = email.split("@")[0] || "Traveler";
+        const displayName = emailName
+          .replace(/[._-]+/g, " ")
+          .replace(/\b\w/g, (letter) => letter.toUpperCase());
+        const dashboards = {
+          traveler: "traveler-dashboard.html",
+          planner: "planner-dashboard.html"
+        };
+        localStorage.setItem("stacklyUser", JSON.stringify({ displayName, email, role }));
+        window.location.href = dashboards[role] || "traveler-dashboard.html";
+        return;
+      }
+      form.reset();
+    }, 700);
   });
 });
 
 preventDelayedAutofill();
 preventNumbersInEmail();
 preventNumbersInNames();
+preventNonNumericPhone();
 setupCountrySelector();

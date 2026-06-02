@@ -115,13 +115,22 @@
 
 @media (max-width: 900px) {
   .gallery-category-grid,
-  .gallery-feature,
   .gallery-story-grid {
     grid-template-columns: 1fr 1fr;
   }
 
   .gallery-feature {
+    grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .gallery-feature-collage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(180px, 1fr);
+  }
+
+  .gallery-feature-collage .feature-large {
+    grid-row: auto;
   }
 }
 
