@@ -17,7 +17,7 @@ if (!loader) {
 
 window.addEventListener("load", () => {
   const elapsed = Date.now() - loaderStart;
-  const remaining = Math.max(0, 1000 - elapsed);
+  const remaining = Math.max(0, 350 - elapsed);
 
   window.setTimeout(() => {
     loader.classList.add("hidden");

@@ -21,6 +21,7 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
+  overflow-x: clip;
   overflow-x: hidden;
 }
 [id] { scroll-margin-top: 96px; }
@@ -35,6 +36,7 @@ body {
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
+  overflow-x: clip;
   overflow-x: hidden;
 }
 
@@ -155,7 +157,14 @@ select:focus-visible,
 .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); }
 .nav-toggle span { display: block; width: 20px; height: 2px; margin: 5px auto; background: var(--text); transition: .2s ease; }
 
-.hero, .page-hero { position: relative; min-height: 70vh; display: grid; align-items: center; overflow: hidden; isolation: isolate; }
+.site-header,
+main,
+.site-footer {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.hero, .page-hero { position: relative; min-height: 70vh; display: grid; align-items: center; overflow: hidden; overflow-x: clip; isolation: isolate; }
 .page-hero { min-height: 58vh; }
 .hero-media { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); z-index: -3; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,7,13,.94), rgba(5,7,13,.7), rgba(5,7,13,.86)); z-index: -2; }
@@ -541,7 +550,6 @@ textarea { resize: vertical; }
 .social-icon.facebook { background: #1877f2; }
 .social-icon.twitter { background: #111827; }
 .social-icon.instagram { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4); }
-.social-icon.youtube { background: #ff0033; }
 .footer-bottom { margin-top: 42px; padding: 20px; text-align: center; color: var(--muted); border-top: 1px solid var(--line); }
 .compact-footer { padding-top: 0; }
 
@@ -571,7 +579,7 @@ textarea { resize: vertical; }
   align-content: center;
   gap: 22px;
   background: #05070d;
-  transition: opacity .45s ease, visibility .45s ease;
+  transition: opacity .25s ease, visibility .25s ease;
 }
 .loader.hidden { opacity: 0; visibility: hidden; }
 .loader-logo-wrap {
