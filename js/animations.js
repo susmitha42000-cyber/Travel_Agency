@@ -43,20 +43,6 @@
     counters.forEach((counter) => observer.observe(counter));
   }
 
-  function pageTransitions() {
-    const transition = document.querySelector(".page-transition");
-    if (!transition) return;
-    document.querySelectorAll("a[href$='.html']").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
-        if (!href || link.target || event.metaKey || event.ctrlKey) return;
-        event.preventDefault();
-        transition.classList.add("active");
-        setTimeout(() => { window.location.href = href; }, 180);
-      });
-    });
-  }
-
   function newsletter() {
     document.querySelectorAll("[data-newsletter]").forEach((form) => {
       form.addEventListener("submit", (event) => {
@@ -72,7 +58,6 @@
 
   attachTilt();
   animateCounters();
-  pageTransitions();
   newsletter();
   window.NovaAnimations = { attachTilt };
 })();

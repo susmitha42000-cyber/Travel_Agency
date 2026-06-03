@@ -1,5 +1,13 @@
 const loaderStart = Date.now();
 let loader = document.querySelector(".loader");
+const transition = document.querySelector(".page-transition");
+
+function clearPageTransition() {
+  if (transition) transition.classList.remove("active");
+}
+
+clearPageTransition();
+window.addEventListener("pageshow", clearPageTransition);
 
 if (!loader) {
   loader = document.createElement("div");
@@ -44,7 +52,6 @@ if (window.NovaParticles) {
 
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href");
-  const transition = document.querySelector(".page-transition");
 
   if (!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
 
